@@ -23,6 +23,13 @@ export class SeccFormComponent implements OnInit {
     id_curso: this.activatedRoute.snapshot.params.id
   };
 
+  seccionval: Seccion = {
+    //id_seccion: 0,
+    sec_nombre: "",
+    sec_horario: "",
+    id_curso: this.activatedRoute.snapshot.params.id
+  };
+
   curso: Curso={
     id_curso: 0,
     cur_nombre: "",
@@ -52,19 +59,23 @@ export class SeccFormComponent implements OnInit {
 
 
 
-  probando(){
-    console.log(this.seccion);
-    this.seccionesservice.guardarSeccion(this.seccion)
-    .subscribe(
-      res => {
-        console.log(res);
-        this.router.navigate(['/admin/cursos']);
-      },
-      err => {
-        document.getElementById('lblName').innerHTML = "Algo ha pasado. Revisa los datos!!";
-        console.error(err)
-      }
-    )
+  probando() {
+
+    
+    if (true) {
+      console.log(this.seccion);
+      this.seccionesservice.guardarSeccion(this.seccion)
+        .subscribe(
+          res => {
+            console.log(res);
+            this.router.navigate(['/admin/cursos']);
+          },
+          err => {
+            document.getElementById('lblName').innerHTML = "Algo ha pasado. Revisa los datos!!";
+            console.error(err)
+          }
+        )
+    }
   }
 
   updatear(){

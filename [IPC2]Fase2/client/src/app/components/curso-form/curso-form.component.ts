@@ -19,7 +19,9 @@ export class CursoFormComponent implements OnInit {
     cur_semestre: 0,
     cur_year: 0
   };
+
   edit: boolean = false;
+  inputDisabled: boolean = false;
 
   constructor(private cursosService: CursosService,
     private router: Router,
@@ -31,10 +33,12 @@ export class CursoFormComponent implements OnInit {
         this.cursosService.getCurso(params.id)
         .subscribe(
           res => {
-  
+            
+            this.inputDisabled = true;
             this.curso = res[0];
             console.log(this.curso);
             this.edit = true;
+            
           },
           err => console.error(err)
         )

@@ -11,7 +11,7 @@
     </div>
       <div class="form-group">
         <label class="col-form-label" for="inputDefault">Código</label>
-        <input type="text" class="form-control" [(ngModel)]="curso.id_curso" placeholder="" id="inputDefault">
+        <input type="text" class="form-control" [disabled]="inputDisabled" [(ngModel)]="curso.id_curso" placeholder="" id="inputDefault">
       </div>
       <div class="form-group">
         <label class="col-form-label" for="inputDefault">Semestre</label>
