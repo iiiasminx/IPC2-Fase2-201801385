@@ -1,0 +1,28 @@
+<div class="col-md-5">
+    <br>
+    <br>
+    <form>
+        <fieldset>
+            <legend>¡Bienvenid@!</legend>
+            <br>
+
+            <h6>Ingresa a tu portal </h6>
+            <div class="form-group">
+                <label class="col-form-label" for="inputDefault">Usuario</label>
+                <input type="text" class="form-control" placeholder="  " id="inputDefault" [(ngModel)]="carnet"  name="n_carnet">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" [(ngModel)]="passsword"  name="n_password" id="exampleInputPassword1" placeholder="  ">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleSelect1">Tipo de Cuenta</label>
+                <select class="form-control" [(ngModel)]="selectedLevel"  name="first">
+                    <option *ngFor="let item of data" [ngValue]="item">{{item.name}}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="ingresando()">Ingresa</button>
+        </fieldset>
+    </form>
+</div>

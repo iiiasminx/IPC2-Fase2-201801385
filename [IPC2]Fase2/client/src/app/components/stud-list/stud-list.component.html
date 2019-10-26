@@ -1,0 +1,31 @@
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Carnet</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let estudiante of estudiantes">
+
+            <td>{{estudiante.stud_nombre}}</td>
+            <td>{{estudiante.stud_apellido}}</td>
+            <td>{{estudiante.stud_email}}</td>
+            <td>{{estudiante.id_estudiante}}</td>
+            <td>
+                <button class="btn btn-danger">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+                &nbsp;&nbsp;
+                <button type="button" class="btn btn-outline-info">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

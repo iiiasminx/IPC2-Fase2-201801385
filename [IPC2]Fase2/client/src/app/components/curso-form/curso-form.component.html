@@ -1,0 +1,32 @@
+
+<div class="col-md-4">
+    <br>
+    <br>
+    <h2>Curso</h2>
+    <br>
+    <br>
+    <div class="form-group">
+        <label class="col-form-label" for="inputDefault">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="curso.cur_nombre" placeholder="" id="inputDefault">
+    </div>
+      <div class="form-group">
+        <label class="col-form-label" for="inputDefault">Código</label>
+        <input type="text" class="form-control" [(ngModel)]="curso.id_curso" placeholder="" id="inputDefault">
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="inputDefault">Semestre</label>
+        <input type="text" class="form-control" [(ngModel)]="curso.cur_semestre" placeholder="" id="inputDefault">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Año</label>
+        <input type="email" class="form-control" [(ngModel)]="curso.cur_year" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+      </div> 
+      <p class="text-danger">
+        <label #lblName id="lblName">
+          
+        </label>
+      </p>
+      <button class="btn btn-success" (click)="edit ? updatear() : probando()">
+        Guardar
+      </button>
+</div>

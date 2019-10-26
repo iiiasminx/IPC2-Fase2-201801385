@@ -1,0 +1,39 @@
+<br><br>
+<p class="text-info">Si quieres agregar una seccion, debes hacerlo desde el
+    modulo de cursos!! :D
+</p>
+<a routerLink="../../admin" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Auxiliar</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let seccion of secciones">
+
+            <td>{{seccion.sec_nombre}}</td>
+            <td>{{seccion.sec_horario}}</td>
+            <td>{{seccion.id_curso}}</td>
+            <td>{{seccion.id_auxiliar}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="eliminando(seccion.id_seccion)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+                &nbsp;&nbsp;
+                <!--<a [routerLink]="['editar', auxiliar.id_auxiliar]" class="btn btn-outline-info" >-->
+                <a class="btn btn-outline-info"  href="#">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

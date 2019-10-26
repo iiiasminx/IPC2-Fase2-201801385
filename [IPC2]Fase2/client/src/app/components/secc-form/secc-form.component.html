@@ -1,0 +1,29 @@
+
+<div class="col-md-4">
+    <br>
+    <br>
+    <h2>Seccion</h2>
+    <br>
+    <br>
+    <div class="form-group">
+      <label class="col-form-label" for="inputDefault">Nombre se Sección</label>
+      <input type="text" class="form-control" [(ngModel)]="seccion.sec_nombre" placeholder="" id="inputDefault">
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" for="inputDefault">Curso</label>
+        <input class="form-control" id="readOnlyInput" type="text" [(ngModel)]="curso.cur_nombre" placeholder="" readonly="">
+      </div>
+      <div class="form-group">
+      <div class="form-group">
+        <label class="col-form-label" for="inputDefault">Horario</label>
+        <input type="text" class="form-control" [(ngModel)]="seccion.sec_horario" placeholder="" id="inputDefault">
+      </div>
+      <p class="text-danger">
+        <label #lblName id="lblName">
+          
+        </label>
+      </p>
+      <button class="btn btn-success" (click)="edit ? updatear() : probando()">
+        Guardar
+      </button>
+</div> 

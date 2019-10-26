@@ -1,0 +1,38 @@
+<br>
+<a routerLink="agregar" class="btn btn-primary">
+    Registrar un Usuario
+</a>
+&nbsp;&nbsp;
+<a routerLink="../../admin" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Carnet</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let auxiliar of auxiliares">
+
+            <td>{{auxiliar.aux_nombre}}</td>
+            <td>{{auxiliar.aux_apellido}}</td>
+            <td>{{auxiliar.aux_email}}</td>
+            <td>{{auxiliar.id_auxiliar}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="eliminando(auxiliar.id_auxiliar)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+                &nbsp;&nbsp;
+                <a [routerLink]="['editar', auxiliar.id_auxiliar]" class="btn btn-outline-info" >
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
