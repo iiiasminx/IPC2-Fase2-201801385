@@ -13,6 +13,7 @@ import {CursoFormComponent} from './components/curso-form/curso-form.component'
 import {CursoListComponent} from './components/curso-list/curso-list.component'
 import {SeccFormComponent} from './components/secc-form/secc-form.component'
 import {SeccListComponent} from './components/secc-list/secc-list.component'
+import {StudAsignacionComponent} from './components/stud-asignacion/stud-asignacion.component'
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
    {
     path: 'estudiante',
     component: StudMainComponent
+  },
+  {
+    path: 'estudiante/asignacion',
+    component: StudAsignacionComponent
   },
   {
     path: 'registro',

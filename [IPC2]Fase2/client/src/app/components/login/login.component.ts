@@ -61,6 +61,7 @@ export class LoginComponent {
               if(this.estudiante.contrasena == this.passsword){
                 this.router.navigate(['/estudiante']);               
               sessionStorage.setItem('usuario',this.carnet);
+              console.log('usuario: ', sessionStorage.getItem('usuario'));
               } else {
                 alert("Usuario o contraseña incorrectos :C")
               }              

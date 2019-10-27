@@ -7,6 +7,7 @@ import auxRoutes from './routes/auxRoutes';
 import estudianteRoutes from './routes/estudianteRoutes';
 import cursoRoutes from './routes/cursoRoutes'; 
 import secRoutes from './routes/secRoutes';
+import asignacionRoutes from './routes/asignacionRoutes';
 
 class Server {
 
@@ -33,6 +34,7 @@ this.app.use('/api/auxiliares', auxRoutes);
 this.app.use('/api/estudiantes', estudianteRoutes);
 this.app.use('/api/cursos', cursoRoutes);
 this.app.use('/api/secciones', secRoutes);
+this.app.use('/api/asignaciones', asignacionRoutes);
 }
 
 start():void{

@@ -37,6 +37,7 @@ class CursoController{
         await pool.query('UPDATE tcurso set? WHERE id_curso =?', [req.body, id]);
         res.json({text: 'curso actualizado'});
     }
+    
 }  
 
 const cursoController = new CursoController();

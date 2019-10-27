@@ -26,4 +26,5 @@ export class CursosService {
   updateCurso(id: string, curso:Curso){
     return this.http.put(`${this.API_AUX}/cursos/${id}`, curso);
   }
+
 }
