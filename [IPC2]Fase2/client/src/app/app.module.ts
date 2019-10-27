@@ -24,7 +24,8 @@ import { SeccListComponent } from './components/secc-list/secc-list.component';
 import { AuxAsignacionComponent } from './components/aux-asignacion/aux-asignacion.component';
 import { StudAsignacionComponent } from './components/stud-asignacion/stud-asignacion.component';
 import { FiltroPipe } from './pipes/filtro.pipe';
-import { FilterPipe } from './pipes/filter.pipe'
+import { FilterPipe } from './pipes/filter.pipe';
+import { StudCursosComponent } from './components/stud-cursos/stud-cursos.component'
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FilterPipe } from './pipes/filter.pipe'
     AuxAsignacionComponent,
     StudAsignacionComponent,
     FiltroPipe,
-    FilterPipe
+    FilterPipe,
+    StudCursosComponent
   ],
   imports: [
     BrowserModule,
