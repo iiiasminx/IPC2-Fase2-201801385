@@ -13,6 +13,8 @@ export class AuxListComponent implements OnInit {
   auxiliares: any = []
   constructor(private auxiliaresService: AuxiliaresService) { }
 
+  filterPost = '';
+
   ngOnInit() {
     this.obteniendoJuegos();
   }

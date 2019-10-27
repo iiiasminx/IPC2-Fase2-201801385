@@ -1,4 +1,6 @@
 <br>
+<h1>Auxiliares</h1>
+<br>
 <a routerLink="agregar" class="btn btn-primary">
     Registrar un Usuario
 </a>
@@ -6,6 +8,9 @@
 <a routerLink="../../admin" class="btn btn-primary">Regresar</a>
 <br>
 <br>
+<br>
+<h5>Buscar</h5>
+<input type="text" class="form-control" name="filterPost" [(ngModel)]='filterPost' id="inputDefault">
 <br>
 <table class="table">
     <thead>
@@ -18,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let auxiliar of auxiliares">
+        <tr *ngFor="let auxiliar of auxiliares | filter:filterPost">
 
             <td>{{auxiliar.aux_nombre}}</td>
             <td>{{auxiliar.aux_apellido}}</td>
