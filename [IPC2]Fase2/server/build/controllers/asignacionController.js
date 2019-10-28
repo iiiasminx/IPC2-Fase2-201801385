@@ -31,6 +31,17 @@ class AsignacionController {
             res.json(resultado[0]);
         });
     }
+    getPorEstudiante(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            console.log('mi id es:', id);
+            const resultado = yield database_1.default.query('SELECT * from tasignacion WHERE id_estudiante = ?', [id]);
+            res.json(resultado[0]);
+            if (resultado[0].length < 1) {
+                res.json({ text: ' La asignacion que busca no existe' });
+            }
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.body);

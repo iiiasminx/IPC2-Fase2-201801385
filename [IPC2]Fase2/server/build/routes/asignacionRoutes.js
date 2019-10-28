@@ -16,6 +16,7 @@ class AsigRoutes {
         this.router.post('/', asignacionController_1.default.create);
         this.router.delete('/:id', asignacionController_1.default.delete);
         this.router.put('/:id', asignacionController_1.default.update);
+        this.router.get('/spec/:id', asignacionController_1.default.getPorEstudiante);
     }
 }
 const asigRoutes = new AsigRoutes();

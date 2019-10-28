@@ -18,6 +18,16 @@ class AsignacionController{
         res.json(resultado[0]); 
     }
 
+    public async getPorEstudiante(req: Request, res:Response){
+        const {id} = req.params;
+        console.log('mi id es:', id);
+        const resultado = await pool.query('SELECT * from tasignacion WHERE id_estudiante = ?', [id]);
+        res.json(resultado[0])
+        if(resultado[0].length < 1){
+            res.json({text: ' La asignacion que busca no existe'})
+        }
+    }
+
     public async create(req: Request, res: Response){
         console.log(req.body);
         await pool.query('INSERT INTO tasignacion set?', [req.body]);

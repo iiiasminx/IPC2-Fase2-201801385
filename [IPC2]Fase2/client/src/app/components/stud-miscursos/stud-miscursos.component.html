@@ -1,0 +1,25 @@
+<br><br>
+<h2>Mis Cursos</h2>
+<a routerLink="../../admin" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID Asignación</th>
+            <th scope="col"> ID Sección</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let asignacion of asignaciones">
+
+            <td>{{asignacion.id_asignacion}}</td>
+            <td>{{asignacion.id_seccion}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="eliminando(seccion.id_seccion)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
