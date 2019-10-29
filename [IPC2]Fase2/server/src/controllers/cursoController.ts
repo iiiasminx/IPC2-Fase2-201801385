@@ -17,6 +17,7 @@ class CursoController{
         }
         res.json(resultado[0]); 
     }
+    
 
     public async create(req: Request, res: Response){
         console.log(req.body);

@@ -15,6 +15,7 @@ class SeccionRoutes{
         this.router.post('/', seccionController.create);
         this.router.delete('/:id',seccionController.delete);
         this.router.put('/:id',seccionController.update);
+        this.router.get('/spec/1', seccionController.getSinAuxiliar);
     }
 }
 

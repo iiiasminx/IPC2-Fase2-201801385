@@ -31,6 +31,13 @@ class SeccionController {
             res.json(resultado[0]);
         });
     }
+    getSinAuxiliar(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            //const cursos = await pool.query('select * from tseccion where id_auxiliar IS NULL;');
+            const cursos = yield database_1.default.query('select tseccion.sec_nombre, tseccion.sec_horario, tseccion.id_seccion, tcurso.cur_nombre from tseccion, tcurso where tseccion.id_auxiliar IS NULL and tseccion.id_curso = tcurso.id_curso group by tseccion.id_seccion;');
+            res.json(cursos[0]);
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.body);

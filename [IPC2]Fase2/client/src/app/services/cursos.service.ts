@@ -12,7 +12,7 @@ export class CursosService {
   constructor(private http: HttpClient) { }
 
   getCursos(){
-    return this.http.get(`${this.API_AUX}/cursos`)
+    return this.http.get(`${this.API_AUX}/cursos`);
   }
   getCurso(id: string){
     return this.http.get(`${this.API_AUX}/cursos/${id}`);
@@ -25,6 +25,9 @@ export class CursosService {
   }
   updateCurso(id: string, curso:Curso){
     return this.http.put(`${this.API_AUX}/cursos/${id}`, curso);
+  }
+  getCursosSinAuxiliar(){
+    return this.http.get(`${this.API_AUX}/cursos/spec/1`)
   }
 
 }

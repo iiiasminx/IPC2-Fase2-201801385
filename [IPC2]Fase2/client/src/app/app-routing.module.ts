@@ -15,6 +15,7 @@ import {SeccFormComponent} from './components/secc-form/secc-form.component'
 import {SeccListComponent} from './components/secc-list/secc-list.component'
 import {StudAsignacionComponent} from './components/stud-asignacion/stud-asignacion.component'
 import {StudMiscursosComponent} from './components/stud-miscursos/stud-miscursos.component'
+import {AuxListAsignacionComponent} from './components/aux-list-asignacion/aux-list-asignacion.component'
 
 const routes: Routes = [
   {
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: 'admin/auxiliares/editar/:id',
     component: AuxFormComponent
+  },
+  {
+    path: 'admin/cursos/asignar-auxiliar',
+    component: AuxListAsignacionComponent
   },
   {
     path: 'login',

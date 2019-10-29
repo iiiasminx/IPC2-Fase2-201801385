@@ -18,6 +18,12 @@ class SeccionController{
         res.json(resultado[0]); 
     }
 
+    public async getSinAuxiliar(req: Request, res:Response){
+        //const cursos = await pool.query('select * from tseccion where id_auxiliar IS NULL;');
+        const cursos = await pool.query('select tseccion.sec_nombre, tseccion.sec_horario, tseccion.id_seccion, tcurso.cur_nombre from tseccion, tcurso where tseccion.id_auxiliar IS NULL and tseccion.id_curso = tcurso.id_curso group by tseccion.id_seccion;');
+        res.json(cursos[0]);
+    }
+
     public async create(req: Request, res: Response){
         console.log(req.body);
         await pool.query('INSERT INTO tseccion set?', [req.body]);

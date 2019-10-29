@@ -1,0 +1,38 @@
+<br>
+<h2>Cursos disponibles para asignar</h2>
+<br>
+<a routerLink="../../../admin" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Auxiliares</th>
+            <th scope="col"> &nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let seccion of secciones">
+
+            <td>{{seccion.id_seccion}}</td>
+            <td>{{seccion.sec_nombre}}</td>
+            <td>{{seccion.sec_horario}}</td>
+            <td>{{seccion.cur_nombre}}</td>
+            <td>
+                <select class="form-control" [(ngModel)]="nivelSeleccionado" name="first">
+                    <option *ngFor="let auxiliar of auxiliares" [ngValue]="item">{{auxiliar.aux_nombre}}</option>
+                </select>
+            </td>
+            <td>
+                <a [routerLink]="['../secciones/agregar', seccion.id_seccion]" class="btn btn-warning">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -26,7 +26,8 @@ import { StudAsignacionComponent } from './components/stud-asignacion/stud-asign
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { StudCursosComponent } from './components/stud-cursos/stud-cursos.component';
-import { StudMiscursosComponent } from './components/stud-miscursos/stud-miscursos.component'
+import { StudMiscursosComponent } from './components/stud-miscursos/stud-miscursos.component';
+import { AuxListAsignacionComponent } from './components/aux-list-asignacion/aux-list-asignacion.component'
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { StudMiscursosComponent } from './components/stud-miscursos/stud-miscurs
     FiltroPipe,
     FilterPipe,
     StudCursosComponent,
-    StudMiscursosComponent
+    StudMiscursosComponent,
+    AuxListAsignacionComponent
   ],
   imports: [
     BrowserModule,

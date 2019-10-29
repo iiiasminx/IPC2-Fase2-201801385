@@ -26,4 +26,7 @@ export class SeccionesService {
   updateSeccion(id: string, seccion: Seccion){
     return this.http.put(`${this.API_AUX}/secciones/${id}`, seccion);
   }
+  getSeccionsinAuxiliar(){
+    return this.http.get(`${this.API_AUX}/secciones/spec/1`);    
+  }
 }
