@@ -21,9 +21,9 @@ class AsignacionController{
     public async getPorEstudiante(req: Request, res:Response){
         const {id} = req.params;
         console.log('mi id es:', id);
-        const resultado = await pool.query('SELECT * from tasignacion WHERE id_estudiante = ?', [id]);
-        res.json(resultado[0])
-        if(resultado[0].length < 1){
+        const resultado = await pool.query('select tseccion.sec_nombre, tseccion.sec_horario, tasignacion.id_asignacion from tseccion,tasignacion where tasignacion.id_seccion=tseccion.id_seccion and tasignacion.id_estudiante = '+ id +' group by tasignacion.id_asignacion;');
+        res.json(resultado)
+        if(resultado.length < 1){
             res.json({text: ' La asignacion que busca no existe'})
         }
     }

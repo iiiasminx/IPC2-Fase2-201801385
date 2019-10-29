@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {AsignacionesService} from '../../services/asignaciones.service'
-import {} from '../../services/secciones.service'
+import {SeccionesService} from '../../services/secciones.service'
 
 
 @Component({
@@ -11,9 +11,11 @@ import {} from '../../services/secciones.service'
 })
 export class StudMiscursosComponent implements OnInit {
 
-  asignaciones: any = [];
+  
+  missecciones: any = [];
 
-  constructor(private asignacionesServices: AsignacionesService) { }
+  constructor(private asignacionesServices: AsignacionesService,
+    private seccionesService: SeccionesService) { }
 
   ngOnInit() {
     this.obteniendoJuegos();
@@ -21,17 +23,33 @@ export class StudMiscursosComponent implements OnInit {
 
   obteniendoJuegos(){
     let esteUsuario =  sessionStorage.getItem('usuario');
-    this.asignacionesServices.getAsignporAuxiliar(esteUsuario).subscribe(
+    this.asignacionesServices.getAsignporEstudiante(esteUsuario).subscribe(
       res => {
-        console.log(res);
-        this.asignaciones = res;
-      },
-      err => console.error(err)
+        console.log(res[0]);
+        this.missecciones = res[0];
+        console.log(this.missecciones);
+      }
     )
+
   }
 
+
   eliminando(id:string){
-    
+    if (window.confirm('¿Segur@ que quieres desasignarte?'))
+    {
+          this.asignacionesServices.eliminarAsign(id).subscribe(
+          res => {
+            console.log(res);
+            this.obteniendoJuegos();
+          },
+          err => console.error(err)
+        )
+    }
+    else
+    {
+        
+    }
+
   }
 
 }

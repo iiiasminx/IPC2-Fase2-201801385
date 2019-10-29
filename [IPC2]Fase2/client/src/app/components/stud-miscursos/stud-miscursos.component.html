@@ -7,16 +7,18 @@
     <thead>
         <tr>
             <th scope="col">ID Asignación</th>
-            <th scope="col"> ID Sección</th>
+            <th scope="col"> Nombre</th>
+            <th scope="col"> Horario</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let asignacion of asignaciones">
+        <tr *ngFor="let seccion of missecciones">
 
-            <td>{{asignacion.id_asignacion}}</td>
-            <td>{{asignacion.id_seccion}}</td>
+            <td>{{seccion.id_asignacion}}</td>
+            <td>{{seccion.sec_nombre}}</td>
+            <td>{{seccion.sec_horario}}</td>
             <td>
-                <button class="btn btn-danger" (click)="eliminando(seccion.id_seccion)">
+                <button class="btn btn-danger" (click)="eliminando(seccion.id_asignacion)">
                     <i class="far fa-trash-alt"></i>
                 </button>
             </td>

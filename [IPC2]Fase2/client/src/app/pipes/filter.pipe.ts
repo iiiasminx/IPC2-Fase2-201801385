@@ -9,16 +9,10 @@ export class FilterPipe implements PipeTransform {
     
     const resultadoPost = [];
     for(const post of value){
-      if(post.aux_nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1){
-        resultadoPost.push(post);
-      }
-      if(post.aux_apellido.toLowerCase().indexOf(arg.toLowerCase()) > -1){
-        resultadoPost.push(post);
-      }
-      if(post.aux_email.toLowerCase().indexOf(arg.toLowerCase()) > -1){
-        resultadoPost.push(post);
-      }
-      if(post.id_auxiliar.toString().indexOf(arg.toString()) > -1){
+      if(post.aux_nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1 || 
+      post.aux_apellido.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+      post.aux_email.toLowerCase().indexOf(arg.toLowerCase()) > -1 ||
+      post.id_auxiliar.toString().indexOf(arg.toString()) > -1){
         resultadoPost.push(post);
       }
 

@@ -31,7 +31,7 @@ export class AsignacionesService {
   updateAsign(id: string, asignacion: Asignacion){
     return this.http.put(`${this.API_AUX}/asignaciones/${id}`, asignacion);
   }
-  getAsignporAuxiliar(id: string){
+  getAsignporEstudiante(id: string){
     return this.http.get(`${this.API_AUX}/asignaciones/spec/${id}`);
   }
 }
