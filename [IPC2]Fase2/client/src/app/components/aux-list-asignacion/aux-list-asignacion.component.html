@@ -24,12 +24,39 @@
             <td>{{seccion.sec_horario}}</td>
             <td>{{seccion.cur_nombre}}</td>
             <td>
-                <select class="form-control" [(ngModel)]="nivelSeleccionado" name="seccion.id_seccion">
-                    <option *ngFor="let auxiliar of auxiliares">{{auxiliar.aux_nombre}} , {{auxiliar.id_auxiliar}}</option>
-                </select>
+               <!-- <select class="form-control" [(ngModel)]="nivelSeleccionado" name="seccion.id_seccion">
+                    <option *ngFor="let auxiliar of auxiliares"
+                        (click)="ingresando(seccion.id_seccion, auxiliar.id_auxiliar)">{{auxiliar.aux_nombre}} ,
+                        {{auxiliar.id_auxiliar}}</option>
+                </select> -->
+              
+                    <!--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Auxiliar <span class="caret"></span>
+                    </button>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li *ngFor="let auxiliar of auxiliares"><a (click)="ingresando(seccion.id_seccion, auxiliar.id_auxiliar)">
+                                {{auxiliar.aux_nombre}} ,
+                                {{auxiliar.id_auxiliar}}</a></li>
+
+                    </ul> -->
+
+                    <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Auxiliar
+                            </button>
+                            <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                           
+                                <a *ngFor="let auxiliar of auxiliares" (click)="ingresando(seccion.id_seccion, auxiliar.id_auxiliar)">
+                                            {{auxiliar.aux_nombre}} ,
+                                            {{auxiliar.id_auxiliar}}</a> 
+                                                            
+                            </div>
+                          </div>
+               
             </td>
             <td>
-                    <button type="submit" class="btn btn-warning" (click)="ingresando(seccion.id_seccion, 201801386)">
+                <button type="submit" class="btn btn-warning">
                     <i class="fas fa-plus"></i>
                 </button>
             </td>

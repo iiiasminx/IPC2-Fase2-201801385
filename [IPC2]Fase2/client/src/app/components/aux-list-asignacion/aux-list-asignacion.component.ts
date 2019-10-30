@@ -42,7 +42,7 @@ export class AuxListAsignacionComponent implements OnInit {
 
   ingresando(id_seccion: string, id_auxiliar: string){
     console.log(this.nivelSeleccionado);
-    console.log('mi id es: ' +id_seccion);
+    console.log('mi id es: ' +id_seccion + '');
 
     this.seccionesService.setearAuxiliar(id_seccion, id_auxiliar).subscribe(
       res => {
