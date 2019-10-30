@@ -29,4 +29,7 @@ export class SeccionesService {
   getSeccionsinAuxiliar(){
     return this.http.get(`${this.API_AUX}/secciones/spec/1`);    
   }
+  setearAuxiliar(id: string, carnet:string){
+    return this.http.put(`${this.API_AUX}/secciones/spec1/${id}`, carnet);
+  }
 }

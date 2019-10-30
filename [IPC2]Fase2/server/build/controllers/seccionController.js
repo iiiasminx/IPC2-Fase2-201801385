@@ -61,6 +61,14 @@ class SeccionController {
             res.json({ text: 'seccion actualizada' });
         });
     }
+    setearAuxiliar(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            console.log('mi id es:', id);
+            yield database_1.default.query('UPDATE tseccion set id_auxiliar = ? WHERE id_seccion = ?;', [req.body, id]);
+            res.json({ text: 'seccion actualizada' });
+        });
+    }
 }
 const seccionController = new SeccionController();
 exports.default = seccionController;

@@ -43,6 +43,13 @@ class SeccionController{
         await pool.query('UPDATE tseccion set? WHERE id_seccion =?', [req.body, id]);
         res.json({text: 'seccion actualizada'});
     }
+
+    public async setearAuxiliar(req: Request, res:Response){
+        const {id} = req.params;
+        console.log('mi id es:', id);
+        await pool.query('UPDATE tseccion set id_auxiliar = ? WHERE id_seccion = ?;', [req.body, id]);
+        res.json({text: 'seccion actualizada'});
+    }
 }  
 
 const seccionController = new SeccionController();

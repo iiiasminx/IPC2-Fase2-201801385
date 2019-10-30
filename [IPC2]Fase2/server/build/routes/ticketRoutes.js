@@ -15,6 +15,7 @@ class TicketRoutes {
         this.router.get('/:id', ticketcontroller_1.default.getOne);
         this.router.post('/', ticketcontroller_1.default.create);
         this.router.delete('/:id', ticketcontroller_1.default.delete);
+        this.router.get('/spec/1', ticketcontroller_1.default.getNombreCursoYSeccion);
     }
 }
 const ticketroutes = new TicketRoutes();

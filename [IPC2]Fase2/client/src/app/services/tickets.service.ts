@@ -23,4 +23,7 @@ export class TicketsService {
   eliminarSeccion(id: string){
     return this.http.delete(`${this.API_AUX}/tickets/${id}`);
   }
+  getLoDemás(){
+    return this.http.get(`${this.API_AUX}/tickets/spec/1`);
+  }
 }

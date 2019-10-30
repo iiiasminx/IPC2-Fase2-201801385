@@ -4,4 +4,6 @@ export interface Ticket {
     tick_contenido?: string,
     tick_estado?: string,
     id_seccion?: number
+    sec_nombre?: string,
+    cur_nombre?: string
 }

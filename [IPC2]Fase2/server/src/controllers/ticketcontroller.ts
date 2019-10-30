@@ -4,7 +4,7 @@ import pool from '../database';
 class TicketController{
 
     public async list (req: Request, res: Response) {
-        const cursos = await pool.query('SELECT * FROM tticket');
+        const cursos = await pool.query('select tseccion.sec_nombre, tcurso.cur_nombre, tticket.id_seccion, tticket.tick_asunto, tticket.id_ticket, tticket.tick_contenido, tticket.tick_estado from tseccion, tcurso, tticket where tseccion.id_curso= tcurso.id_curso and tseccion.id_seccion = tticket.id_seccion group by tticket.id_ticket;');
         res.json(cursos[0]);
     }
 
@@ -17,7 +17,13 @@ class TicketController{
         }
         res.json(resultado[0]); 
     }
-    
+
+    public async getNombreCursoYSeccion (req: Request, res: Response) {
+        const cursos = await pool.query('select tseccion.sec_nombre, tcurso.cur_nombre, tticket.id_seccion, tticket.tick_asunto, tticket.tick_contenido, tticket.tick_estado from tseccion, tcurso, tticket where tseccion.id_curso= tcurso.id_curso and tseccion.id_seccion = tticket.id_seccion group by tticket.id_ticket;');
+        res.json(cursos[0]);
+    }
+
+       
 
     public async create(req: Request, res: Response){
         console.log(req.body);

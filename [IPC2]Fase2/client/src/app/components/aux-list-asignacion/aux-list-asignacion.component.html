@@ -24,14 +24,14 @@
             <td>{{seccion.sec_horario}}</td>
             <td>{{seccion.cur_nombre}}</td>
             <td>
-                <select class="form-control" [(ngModel)]="nivelSeleccionado" name="first">
-                    <option *ngFor="let auxiliar of auxiliares" [ngValue]="item">{{auxiliar.aux_nombre}}</option>
+                <select class="form-control" [(ngModel)]="nivelSeleccionado" name="seccion.id_seccion">
+                    <option *ngFor="let auxiliar of auxiliares">{{auxiliar.aux_nombre}} , {{auxiliar.id_auxiliar}}</option>
                 </select>
             </td>
             <td>
-                <a [routerLink]="['../secciones/agregar', seccion.id_seccion]" class="btn btn-warning">
+                    <button type="submit" class="btn btn-warning" (click)="ingresando(seccion.id_seccion, 201801386)">
                     <i class="fas fa-plus"></i>
-                </a>
+                </button>
             </td>
         </tr>
     </tbody>

@@ -1,1 +1,33 @@
-<p>ticket-list works!</p>
+<br>
+<h1>Tickets</h1>
+<br>
+<a routerLink="../../estudiante" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Seccion</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Asunto</th>
+            <th scope="col">Contenido</th>
+            <th scope="col">Estado</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of tickets ">
+
+            <td>{{ticket.id_ticket}}</td> 
+            <td>{{ticket.sec_nombre}}</td>
+            <td>{{ticket.cur_nombre}}</td>           
+            <td>{{ticket.tick_asunto}}</td>
+            <td>{{ticket.tick_contenido}}</td>
+            <td>{{ticket.tick_estado}}</td>
+            
+        </tr>
+       
+    </tbody>
+</table>

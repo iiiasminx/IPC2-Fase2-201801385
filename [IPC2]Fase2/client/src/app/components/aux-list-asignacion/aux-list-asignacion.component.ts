@@ -15,24 +15,13 @@ export class AuxListAsignacionComponent implements OnInit {
   constructor(private seccionesService: SeccionesService, 
     private auxiliaresService: AuxiliaresService) { }
 
-  nivelSeleccionado;
-  data:Array<Object> = [
-      {id: 0, name: "Estudiante"},
-      {id: 1, name: "Auxiliar"},
-      {id: 2, name: "Administrador"}
-  ];
+
+    nivelSeleccionado: string;
 
   ngOnInit() {
     this.obteniendoJuegos();
-    this.obteniendoNombres();
   }
-
-  obteniendoNombres(){
-    let datos:Array<Object> = []
-    for(let auxiliar of this.auxiliares){
-      
-    }
-  }
+  
 
   obteniendoJuegos(){
     this.seccionesService.getSeccionsinAuxiliar().subscribe(
@@ -49,6 +38,19 @@ export class AuxListAsignacionComponent implements OnInit {
       },
       err => console.error(err)
     )
+  }
+
+  ingresando(id_seccion: string, id_auxiliar: string){
+    console.log(this.nivelSeleccionado);
+    console.log('mi id es: ' +id_seccion);
+
+    this.seccionesService.setearAuxiliar(id_seccion, id_auxiliar).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => console.error(err)
+    )
+
   }
 
   

@@ -11,8 +11,6 @@ import { Ticket } from 'src/app/models/ticket';
 })
 export class TicketFormComponent implements OnInit {
 
-  @HostBinding('class') classes = 'row';
-
   constructor(private router: Router,
     private activatedRoute: ActivatedRoute,
     private ticketService: TicketsService) { }

@@ -17,6 +17,7 @@ class SeccionRoutes {
         this.router.delete('/:id', seccionController_1.default.delete);
         this.router.put('/:id', seccionController_1.default.update);
         this.router.get('/spec/1', seccionController_1.default.getSinAuxiliar);
+        this.router.get('/spec1/:id', seccionController_1.default.setearAuxiliar);
     }
 }
 const seccionRoutes = new SeccionRoutes();
