@@ -32,4 +32,10 @@ export class SeccionesService {
   setearAuxiliar(id: string, carnet:string){
     return this.http.get(`${this.API_AUX}/secciones/spec1/${id}/${carnet}`);
   }
+  getCursosdeMiAuxiliar(id: string){
+    return this.http.get(`${this.API_AUX}/secciones/spec2/${id}`);
+  }
+  desasignarAuxdeClase(id:string){
+    return this.http.get(`${this.API_AUX}/secciones/spec3/${id}`);
+  }
 }

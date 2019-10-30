@@ -29,7 +29,8 @@ import { StudCursosComponent } from './components/stud-cursos/stud-cursos.compon
 import { StudMiscursosComponent } from './components/stud-miscursos/stud-miscursos.component';
 import { AuxListAsignacionComponent } from './components/aux-list-asignacion/aux-list-asignacion.component';
 import { TicketFormComponent } from './components/ticket-form/ticket-form.component';
-import { TicketListComponent } from './components/ticket-list/ticket-list.component'
+import { TicketListComponent } from './components/ticket-list/ticket-list.component';
+import { AuxVerComponent } from './components/aux-ver/aux-ver.component'
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { TicketListComponent } from './components/ticket-list/ticket-list.compon
     StudMiscursosComponent,
     AuxListAsignacionComponent,
     TicketFormComponent,
-    TicketListComponent
+    TicketListComponent,
+    AuxVerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+<br><br>
+<h2>Secciones por Auxiliar</h2>
+<a routerLink="../../../../admin" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let seccion of secciones">
+
+            <td>{{seccion.sec_nombre}}</td>
+            <td>{{seccion.sec_horario}}</td>
+            <td>{{seccion.id_curso}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="eliminando(seccion.id_seccion)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+

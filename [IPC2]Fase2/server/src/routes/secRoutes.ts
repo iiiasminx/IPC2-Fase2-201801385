@@ -17,6 +17,8 @@ class SeccionRoutes{
         this.router.put('/:id',seccionController.update);
         this.router.get('/spec/1', seccionController.getSinAuxiliar);
         this.router.get('/spec1/:id/:id_estudiante', seccionController.setearAuxiliar);
+        this.router.get('/spec2/:id', seccionController.getPorAuxiliar);
+        this.router.get('/spec3/:id', seccionController.desasignarAuxiliar);
     }
 }
 

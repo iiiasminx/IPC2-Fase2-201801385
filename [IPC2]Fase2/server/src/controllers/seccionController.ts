@@ -8,6 +8,15 @@ class SeccionController{
         res.json(cursos[0]);
     }
 
+    public async getPorAuxiliar (req: Request, res: Response) {
+        const {id} = req.params;
+        const cursos = await pool.query('SELECT * FROM tseccion where id_auxiliar = ' +  id);
+        if(cursos[0].length < 1){
+            res.json({text: 'El auxiliar aún no se ha asignado secciones'});
+        }
+        res.json(cursos[0]); 
+    }
+
     public async getOne(req: Request, res:Response){
         const {id} = req.params;
         console.log('mi id es:', id);
@@ -42,6 +51,11 @@ class SeccionController{
         console.log('mi id es:', id);
         await pool.query('UPDATE tseccion set? WHERE id_seccion =?', [req.body, id]);
         res.json({text: 'seccion actualizada'});
+    }
+
+    public async desasignarAuxiliar(req: Request, res:Response){
+        await pool.query('UPDATE tseccion set id_auxiliar = NULL WHERE id_seccion = '+ req.params.id +';');
+        res.json({text: 'auxiliar desasignado'});
     }
 
     public async setearAuxiliar(req: Request, res:Response){

@@ -18,6 +18,7 @@ import {StudMiscursosComponent} from './components/stud-miscursos/stud-miscursos
 import {AuxListAsignacionComponent} from './components/aux-list-asignacion/aux-list-asignacion.component'
 import {TicketListComponent} from './components/ticket-list/ticket-list.component' 
 import {TicketFormComponent} from './components/ticket-form/ticket-form.component'
+import {AuxVerComponent} from './components/aux-ver/aux-ver.component'
 
 const routes: Routes = [
   {
@@ -85,6 +86,10 @@ const routes: Routes = [
   {
     path: 'admin/auxiliares',
     component:AuxListComponent
+  },
+  {
+    path: 'admin/auxiliares/ver/:id',
+    component: AuxVerComponent
   },
   {
     path: 'admin/estudiantes',
