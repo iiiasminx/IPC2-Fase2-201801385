@@ -1,6 +1,6 @@
 <br><br>
 <h2>Mis Cursos</h2>
-<a routerLink="../../admin" class="btn btn-primary">Regresar</a>
+<a routerLink="../../estudiante" class="btn btn-primary">Regresar</a>
 <br>
 <br>
 <table class="table">
@@ -21,6 +21,11 @@
                 <button class="btn btn-danger" (click)="eliminando(seccion.id_asignacion)">
                     <i class="far fa-trash-alt"></i>
                 </button>
+                &nbsp;
+                &nbsp;
+                <a [routerLink]="['../tickets/agregar', seccion.id_seccion]" class="btn btn-outline-info">
+                    <i class="fas fa-paper-plane"></i>
+                </a>
             </td>
         </tr>
     </tbody>

@@ -15,8 +15,23 @@ export class AuxListAsignacionComponent implements OnInit {
   constructor(private seccionesService: SeccionesService, 
     private auxiliaresService: AuxiliaresService) { }
 
+  nivelSeleccionado;
+  data:Array<Object> = [
+      {id: 0, name: "Estudiante"},
+      {id: 1, name: "Auxiliar"},
+      {id: 2, name: "Administrador"}
+  ];
+
   ngOnInit() {
     this.obteniendoJuegos();
+    this.obteniendoNombres();
+  }
+
+  obteniendoNombres(){
+    let datos:Array<Object> = []
+    for(let auxiliar of this.auxiliares){
+      
+    }
   }
 
   obteniendoJuegos(){
@@ -36,8 +51,6 @@ export class AuxListAsignacionComponent implements OnInit {
     )
   }
 
-  nivelSeleccionado(){
-    console.log('seleccionaste un nivel');
-  }
+  
 
 }

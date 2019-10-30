@@ -1,0 +1,29 @@
+<div class="col-md-4">
+    <br>
+    <br>
+    <h2>Tickets</h2>
+    <br>
+    <br>
+    <div class="form-group">
+        <!--<fieldset disabled="">
+            <label class="control-label" for="disabledInput">Sección</label>
+            <input class="form-control" id="disabledInput" type="text" [(ngModel)]="ticket.id_seccion" disabled="">
+        </fieldset>-->
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" for="inputDefault">Asunto</label>
+        <input type="text" class="form-control" [(ngModel)]="ticket.tick_asunto" placeholder="" id="inputDefault">
+    </div>
+    <div class="form-group">
+        <label for="exampleTextarea">Contenido</label>
+        <textarea class="form-control" [(ngModel)]="ticket.tick_contenido" id="exampleTextarea" rows="4"></textarea>
+    </div>
+    <p class="text-danger">
+        <label #lblName id="lblName">
+
+        </label>
+    </p>
+    <button class="btn btn-success" (click)="probando()">
+        Enviar
+    </button>
+</div>

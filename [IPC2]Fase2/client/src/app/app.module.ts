@@ -27,7 +27,9 @@ import { FiltroPipe } from './pipes/filtro.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { StudCursosComponent } from './components/stud-cursos/stud-cursos.component';
 import { StudMiscursosComponent } from './components/stud-miscursos/stud-miscursos.component';
-import { AuxListAsignacionComponent } from './components/aux-list-asignacion/aux-list-asignacion.component'
+import { AuxListAsignacionComponent } from './components/aux-list-asignacion/aux-list-asignacion.component';
+import { TicketFormComponent } from './components/ticket-form/ticket-form.component';
+import { TicketListComponent } from './components/ticket-list/ticket-list.component'
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { AuxListAsignacionComponent } from './components/aux-list-asignacion/aux
     FilterPipe,
     StudCursosComponent,
     StudMiscursosComponent,
-    AuxListAsignacionComponent
+    AuxListAsignacionComponent,
+    TicketFormComponent,
+    TicketListComponent
   ],
   imports: [
     BrowserModule,

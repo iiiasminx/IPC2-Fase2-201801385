@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {AuxListComponent} from './components/aux-list/aux-list.component';
@@ -16,6 +16,8 @@ import {SeccListComponent} from './components/secc-list/secc-list.component'
 import {StudAsignacionComponent} from './components/stud-asignacion/stud-asignacion.component'
 import {StudMiscursosComponent} from './components/stud-miscursos/stud-miscursos.component'
 import {AuxListAsignacionComponent} from './components/aux-list-asignacion/aux-list-asignacion.component'
+import {TicketListComponent} from './components/ticket-list/ticket-list.component' 
+import {TicketFormComponent} from './components/ticket-form/ticket-form.component'
 
 const routes: Routes = [
   {
@@ -35,6 +37,14 @@ const routes: Routes = [
   {
     path: 'estudiante/cursos',
     component: StudMiscursosComponent
+  },
+  {
+    path: 'estudiante/tickets',
+    component: TicketListComponent
+  },
+  {
+    path: 'estudiante/tickets/agregar/:id',
+    component: TicketFormComponent
   },
   {
     path: 'registro',

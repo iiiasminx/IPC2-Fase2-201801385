@@ -35,7 +35,7 @@ class AsignacionController {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
             console.log('mi id es:', id);
-            const resultado = yield database_1.default.query('select tseccion.sec_nombre, tseccion.sec_horario, tasignacion.id_asignacion from tseccion,tasignacion where tasignacion.id_seccion=tseccion.id_seccion and tasignacion.id_estudiante = ' + id + ' group by tasignacion.id_asignacion;');
+            const resultado = yield database_1.default.query('select tseccion.sec_nombre, tseccion.id_seccion, tseccion.sec_horario, tasignacion.id_asignacion from tseccion,tasignacion where tasignacion.id_seccion=tseccion.id_seccion and tasignacion.id_estudiante = ' + id + ' group by tasignacion.id_asignacion;');
             res.json(resultado);
             if (resultado.length < 1) {
                 res.json({ text: ' La asignacion que busca no existe' });
