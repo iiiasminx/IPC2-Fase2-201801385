@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {SeccionesService} from '../../services/secciones.service'
-import {AuxiliaresService} from '../../services/auxiliares.service'
+import { SeccionesService } from '../../services/secciones.service'
+import { AuxiliaresService } from '../../services/auxiliares.service'
 import { Seccion } from 'src/app/models/seccion';
 
 @Component({
@@ -18,7 +18,8 @@ export class SeccListComponent implements OnInit {
     this.obteniendoJuegos();
   }
 
-  obteniendoJuegos(){
+  filtropost = '';
+  obteniendoJuegos() {
     this.seccionesservice.getSecciones().subscribe(
       res => {
         console.log(res);
@@ -28,7 +29,7 @@ export class SeccListComponent implements OnInit {
     )
   }
 
-  eliminando(id : number){
+  eliminando(id: number) {
     let sid = id.toString();
     console.log(sid);
     this.seccionesservice.eliminarSeccion(sid).subscribe(
@@ -38,6 +39,23 @@ export class SeccListComponent implements OnInit {
       },
       err => console.error(err)
     )
+  }
+
+  eliminandoAux(id: string) {
+
+    var person = prompt("¿Por que quieres desasignar al auxiliar? D:", "");
+
+    if (person == null || person == "") {
+      alert("por favor dame una razón :c")
+    } else {
+      this.seccionesservice.desasignarAuxdeClase(id).subscribe(
+        res => {
+          console.log(res);
+          this.obteniendoJuegos();
+        },
+        err => console.error(err)
+      )
+    }
   }
 
 

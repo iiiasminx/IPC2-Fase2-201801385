@@ -5,6 +5,10 @@
 <a routerLink="../../admin" class="btn btn-primary">Regresar</a>
 <br>
 <br>
+<h5>Buscar</h5>
+<input type="text" class="form-control" name="filtroPost" [(ngModel)]='filtroPost' id="inputDefault">
+<br>
+<br>
 <table class="table">
     <thead>
         <tr>
@@ -31,6 +35,10 @@
                 <a class="btn btn-outline-info"  href="#">
                     <i class="fas fa-pencil-alt"></i>
                 </a>
+                &nbsp;&nbsp;
+                <button class="btn btn-success" (click)="eliminandoAux(seccion.id_seccion)">
+                        <i class="fas fa-sad-tear"></i>
+                </button>
             </td>
         </tr>
     </tbody>
