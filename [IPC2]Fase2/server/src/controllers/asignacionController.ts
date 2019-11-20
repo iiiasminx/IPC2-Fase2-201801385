@@ -28,6 +28,14 @@ class AsignacionController{
         }
     }
 
+    public async getTodo(req: Request, res:Response){
+        const resultado = await pool.query('SELECT tcurso.cur_nombre, tcurso.cur_semestre, tcurso.cur_year, tseccion.sec_nombre, tseccion.sec_horario, tseccion.id_curso, tasignacion.id_estudiante, testudiante.stud_nombre FROM tasignacion  LEFT JOIN tseccion    ON tasignacion.id_seccion = tseccion.id_seccion INNER JOIN tcurso ON tcurso.id_curso = tseccion.id_curso LEFT JOIN testudiante ON tasignacion.id_estudiante = testudiante.id_estudiante;');
+        res.json(resultado)
+        if(resultado.length < 1){
+            res.json({text: ' La asignacion que busca no existe'})
+        }
+    }
+
     public async create(req: Request, res: Response){
         console.log(req.body);
         await pool.query('INSERT INTO tasignacion set?', [req.body]);

@@ -17,7 +17,7 @@ export class TicketListComponent implements OnInit {
   }
 
   obteniendoJuegos(){
-    this.ticketService.getSecciones().subscribe(
+    this.ticketService.getTickets().subscribe(
       res => {
         console.log(res);
         this.tickets = res;

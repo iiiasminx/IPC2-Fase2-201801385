@@ -30,7 +30,11 @@ import { StudMiscursosComponent } from './components/stud-miscursos/stud-miscurs
 import { AuxListAsignacionComponent } from './components/aux-list-asignacion/aux-list-asignacion.component';
 import { TicketFormComponent } from './components/ticket-form/ticket-form.component';
 import { TicketListComponent } from './components/ticket-list/ticket-list.component';
-import { AuxVerComponent } from './components/aux-ver/aux-ver.component'
+import { AuxVerComponent } from './components/aux-ver/aux-ver.component';
+import { AdminAsignListComponent } from './components/admin-asign-list/admin-asign-list.component';
+import { Filtro1Pipe } from './pipes/filtro1.pipe';
+import { AdminTicketListComponent } from './components/admin-ticket-list/admin-ticket-list.component';
+import { Filtro2Pipe } from './pipes/filtro2.pipe'
 
 @NgModule({
   declarations: [
@@ -57,7 +61,11 @@ import { AuxVerComponent } from './components/aux-ver/aux-ver.component'
     AuxListAsignacionComponent,
     TicketFormComponent,
     TicketListComponent,
-    AuxVerComponent
+    AuxVerComponent,
+    AdminAsignListComponent,
+    Filtro1Pipe,
+    AdminTicketListComponent,
+    Filtro2Pipe
   ],
   imports: [
     BrowserModule,

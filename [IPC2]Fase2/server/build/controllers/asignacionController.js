@@ -42,6 +42,15 @@ class AsignacionController {
             }
         });
     }
+    getTodo(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const resultado = yield database_1.default.query('SELECT tcurso.cur_nombre, tcurso.cur_semestre, tcurso.cur_year, tseccion.sec_nombre, tseccion.sec_horario, tseccion.id_curso, tasignacion.id_estudiante, testudiante.stud_nombre FROM tasignacion  LEFT JOIN tseccion    ON tasignacion.id_seccion = tseccion.id_seccion INNER JOIN tcurso ON tcurso.id_curso = tseccion.id_curso LEFT JOIN testudiante ON tasignacion.id_estudiante = testudiante.id_estudiante;');
+            res.json(resultado);
+            if (resultado.length < 1) {
+                res.json({ text: ' La asignacion que busca no existe' });
+            }
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.body);

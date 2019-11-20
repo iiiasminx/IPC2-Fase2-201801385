@@ -1,0 +1,31 @@
+<br>
+<h2>Asignaciones</h2>
+<br>
+<a routerLink="../../../admin" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<br>
+<h5>Buscar</h5>
+<input type="text" class="form-control" name="filterPost2" [(ngModel)]='filterPost2' id="inputDefault">
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Detalle</th>         
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of tickets | filtro2:filterPost2">
+
+            <td>{{ticket.tick_asunto}}</td>
+            <td>{{ticket.tick_estado}}</td>
+            <td>{{ticket.tick_fecha}}</td>
+            <td>{{ticket.tick_contenido}}</td>
+            
+        </tr>
+    </tbody>
+</table>

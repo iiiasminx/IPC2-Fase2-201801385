@@ -16,7 +16,7 @@ const database_1 = __importDefault(require("../database"));
 class TicketController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const cursos = yield database_1.default.query('select tseccion.sec_nombre, tcurso.cur_nombre, tticket.id_seccion, tticket.tick_asunto, tticket.id_ticket, tticket.tick_contenido, tticket.tick_estado from tseccion, tcurso, tticket where tseccion.id_curso= tcurso.id_curso and tseccion.id_seccion = tticket.id_seccion group by tticket.id_ticket;');
+            const cursos = yield database_1.default.query('select tseccion.sec_nombre, tcurso.cur_nombre, tticket.id_seccion, tticket.tick_asunto, tticket.tick_fecha, tticket.id_ticket, tticket.tick_contenido, tticket.tick_estado from tseccion, tcurso, tticket where tseccion.id_curso= tcurso.id_curso and tseccion.id_seccion = tticket.id_seccion group by tticket.id_ticket;');
             res.json(cursos[0]);
         });
     }

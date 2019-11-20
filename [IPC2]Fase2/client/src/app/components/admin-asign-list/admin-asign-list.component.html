@@ -1,0 +1,35 @@
+<br>
+<h2>Asignaciones</h2>
+<br>
+<a routerLink="../../../admin" class="btn btn-primary">Regresar</a>
+<br>
+<br>
+<br>
+<h5>Buscar</h5>
+<input type="text" class="form-control" name="filterPost1" [(ngModel)]='filterPost1' id="inputDefault">
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id alumno</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Seccion</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Año</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let asignacion of asignaciones | filtro1:filterPost1">
+
+            <td>{{asignacion.id_estudiante}}</td>
+            <td>{{asignacion.stud_nombre}}</td>
+            <td>{{asignacion.sec_nombre}}</td>
+            <td>{{asignacion.cur_nombre}}</td>
+            <td>{{asignacion.sec_horario}}</td>
+            <td>{{asignacion.cur_year}}</td>
+            
+        </tr>
+    </tbody>
+</table>

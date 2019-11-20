@@ -11,16 +11,16 @@ export class TicketsService {
   API_AUX = 'http://localhost:3000/api';
   constructor(private http: HttpClient) { }
 
-  getSecciones(){
+  getTickets(){
     return this.http.get(`${this.API_AUX}/tickets`)
   }
-  getSeccion(id: string){
+  getTicket(id: string){
     return this.http.get(`${this.API_AUX}/tickets/${id}`);
   }
-  guardarSeccion(ticket: Ticket){
+  guardarTicket(ticket: Ticket){
     return this.http.post(`${this.API_AUX}/tickets`, ticket);
   }
-  eliminarSeccion(id: string){
+  eliminarTicket(id: string){
     return this.http.delete(`${this.API_AUX}/tickets/${id}`);
   }
   getLoDemás(){

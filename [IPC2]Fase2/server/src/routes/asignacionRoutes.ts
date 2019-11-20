@@ -10,6 +10,7 @@ class AsigRoutes{
 
     config(): void{
         this.router.get('/', asignacionController.list);
+        this.router.get('/fase3/', asignacionController.getTodo);
         this.router.get('/:id', asignacionController.getOne);
         this.router.post('/', asignacionController.create);
         this.router.delete('/:id',asignacionController.delete);

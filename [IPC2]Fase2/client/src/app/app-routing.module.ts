@@ -19,6 +19,8 @@ import {AuxListAsignacionComponent} from './components/aux-list-asignacion/aux-l
 import {TicketListComponent} from './components/ticket-list/ticket-list.component' 
 import {TicketFormComponent} from './components/ticket-form/ticket-form.component'
 import {AuxVerComponent} from './components/aux-ver/aux-ver.component'
+import { AdminAsignListComponent } from './components/admin-asign-list/admin-asign-list.component';
+import { AdminTicketListComponent } from './components/admin-ticket-list/admin-ticket-list.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,14 @@ const routes: Routes = [
   {
     path: 'admin/secciones',
     component:SeccListComponent
+  },
+  {
+    path: 'admin/consultas/asignaciones',
+    component:AdminAsignListComponent
+  },
+  {
+    path: 'admin/consultas/tickets',
+    component:AdminTicketListComponent
   },
   {
     path: 'admin/secciones/agregar/:id',

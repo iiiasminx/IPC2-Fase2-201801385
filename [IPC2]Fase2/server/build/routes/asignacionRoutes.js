@@ -12,6 +12,7 @@ class AsigRoutes {
     }
     config() {
         this.router.get('/', asignacionController_1.default.list);
+        this.router.get('/fase3/', asignacionController_1.default.getTodo);
         this.router.get('/:id', asignacionController_1.default.getOne);
         this.router.post('/', asignacionController_1.default.create);
         this.router.delete('/:id', asignacionController_1.default.delete);

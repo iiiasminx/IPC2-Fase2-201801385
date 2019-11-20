@@ -15,6 +15,9 @@ export class AsignacionesService {
   getAsigns(){
     return this.http.get(`${this.API_AUX}/asignaciones`);
   }
+  getTodo(){
+    return this.http.get(`${this.API_AUX}/asignaciones/fase3/`);
+  }
 
   getAsign(id: string){
     return this.http.get(`${this.API_AUX}/asignaciones/${id}`);
