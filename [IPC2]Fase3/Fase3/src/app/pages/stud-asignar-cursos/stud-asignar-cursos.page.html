@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-toolbar>
+        <ion-title>Asignación de Cursos</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngFor="let seccion of secciones">
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+              <ion-button class="btn btn-info" (click)="asignando(seccion.id_seccion)">
+                  <i class="fas fa-plus"></i>
+              </ion-button>
+            Curso:&nbsp;{{seccion.id_curso}}   
+          </ion-card-title>
+          
+        </ion-card-header>
+      
+        <ion-card-content>
+         Id seccion: &nbsp; {{seccion.id_seccion}} <br>
+         Nombre seccion: &nbsp; {{seccion.sec_nombre}} <br>
+         Horario: &nbsp; {{seccion.sec_horario}}
+        </ion-card-content>
+      </ion-card>
+</div>
+</ion-content>

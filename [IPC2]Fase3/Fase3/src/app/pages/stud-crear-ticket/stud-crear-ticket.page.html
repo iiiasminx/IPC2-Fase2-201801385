@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot = "start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    
+        <ion-title>Crear Ticket</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item>
+        <ion-label position="stacked">Asunto</ion-label>
+        <ion-input [(ngModel)]="ticket.tick_asunto" id="inputDefault"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Contenido</ion-label>
+          <ion-input [(ngModel)]="ticket.tick_contenido" id="inputDefault"></ion-input>
+        </ion-item>
+    <br><br>
+    <ion-label #lblName id="lblName"></ion-label>
+    <br>
+    <ion-button (click)="probando()">
+      Enviar Ticket
+    </ion-button>
+</ion-content>

@@ -4,7 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuxiliaresService } from '../../services/auxiliares.service';
-import {EstudiantesService} from '../../services/estudiantes.service';
+import { EstudiantesService } from '../../services/estudiantes.service';
 import { Estudiante } from 'src/app/models/estudiante';
 import { Auxiliar } from 'src/app/models/auxiliar';
 
@@ -45,21 +45,70 @@ export class InicioPage implements OnInit {
     }
   ];
 
-  constructor(public navCtrl: NavController, public toastController: ToastController, 
+  constructor(public navCtrl: NavController, public toastController: ToastController,
     private router: Router, private auxiliaresService: AuxiliaresService,
     private estudiantesService: EstudiantesService) { }
 
   ngOnInit() {
   }
 
-  onChange(selectedValue){
-    console.info("Selected:",selectedValue);
-  }
 
-  Ingresando(SelectedValue){
+  Ingresando(SelectedValue) {
     console.log(this.nombre + " " + this.password);
 
     console.info(this.selectedLevel.first);
+    // ESTUDIANTE
+    if (this.selectedLevel.first == "Estudiante") {
+
+      console.log("Estudiante Seleccionado")
+
+      this.estudiantesService.getEstudiante(this.nombre).subscribe(
+        res => {
+          this.estudiante = res[0];
+          console.log(res[0]);
+          if (this.estudiante) {
+            console.log(this.estudiante.contrasena + " comparando con " + this.password);
+            if (this.estudiante.contrasena == this.password) {
+              this.router.navigate(['/stud-main']);               
+              sessionStorage.setItem('usuario', this.nombre);
+              console.log('usuario: ', sessionStorage.getItem('usuario'));
+            } else {
+              alert("Usuario o contraseña incorrectos :C")
+            }
+          } else {
+            alert("Usuario o contraseña incorrectos :C")
+          }
+        },
+        err => {
+          console.error(err);
+        }
+      )
+
+    }
+    // AUXILIAR
+    else if (this.selectedLevel.first == "Auxiliar"){
+      console.log("Auxiliar Seleccionado")
+      this.auxiliaresService.getAuxiliarr(this.nombre).subscribe(
+        res => {
+          this.auxiliar = res[0];
+          console.log(res[0]);
+          if (this.auxiliar) {
+            console.log(this.auxiliar.contraseña + " comparando con " + this.password);
+            if (this.auxiliar.contraseña == this.password) {
+              this.router.navigate(['/aux-main']);
+              sessionStorage.setItem('usuario', this.nombre);
+            } else {
+              alert("Usuario o contraseña incorrectos :C")
+            }
+          } else {
+            alert("Usuario o contraseña incorrectos :C")
+          }
+        },
+        err => {
+          console.error(err);
+        }
+      )
+    }
   }
 
 }

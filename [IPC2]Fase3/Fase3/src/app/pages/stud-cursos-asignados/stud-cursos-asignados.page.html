@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <ion-toolbar>
+    <ion-title>Mis Cursos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let seccion of missecciones">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          <button class="btn btn-danger" (click)="eliminando(seccion.id_asignacion)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+          &nbsp;
+          &nbsp;
+          <button class="btn btn-danger" (click)="ticket(seccion.id_seccion)">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          <!--<a [routerLink]="['/stud-crear.ticket', seccion.id_seccion]" class="btn btn-outline-info">
+            <i class="fas fa-paper-plane"></i>
+          </a>-->
+          <br><br>
+          ID Asignación: {{seccion.id_asignacion}}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Id seccion: &nbsp; {{seccion.id_seccion}} <br>
+        Nombre seccion: &nbsp; {{seccion.sec_nombre}} <br>
+        Horario: &nbsp; {{seccion.sec_horario}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

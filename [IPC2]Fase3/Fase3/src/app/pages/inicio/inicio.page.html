@@ -16,7 +16,7 @@
   <br><br>
   <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input name="n_password" [(ngModel)]="password"></ion-input>
+    <ion-input type = "password"name="n_password" [(ngModel)]="password"></ion-input>
   </ion-item>
   <a routerLink="/no-password" color="tertiary">¿Olvidaste tu contraseña? :c</a>
 
@@ -31,22 +31,6 @@
       </ion-select>
     </ion-item>
 
-  <!--<ion-item>
-    <ion-select #newSelect [(ngModel)]="carbrand" (change)="onChange(carbrand)">
-        <ion-select-option value="Porsche" checked="true">Porsche</ion-select-option>
-        <ion-select-option value="Mercedes" >Mercedes</ion-select-option>
-        <ion-select-option value="Buggati">Buggati</ion-select-option>
-        <ion-select-option value="Lamborghini">Lamborghini</ion-select-option>
-        <ion-select-option value="Domster">Domster</ion-select-option>
-      </ion-select>
-
-    <ion-select placeholder="Selecciona Uno" #newSelect [(ngModel)]="carbrand" (change)="onChange(carbrand)">
-       <ion-select-option *ngFor="let user of users" >{{user.first}}</ion-select-option>
-      <ion-select-option value="stud">Estudiante</ion-select-option>
-        <ion-select-option value="aux">Auxiliar</ion-select-option>
-        <ion-select-option value="admin">Administrador</ion-select-option>
-    </ion-select>
-  </ion-item>-->
 
   <br><br>
 

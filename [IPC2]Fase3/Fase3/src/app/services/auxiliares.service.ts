@@ -15,7 +15,7 @@ export class AuxiliaresService {
     return this.http.get(`${this.API_AUX}/auxiliares`);
   }
 
-  getAuxiliar(id: string){
+  getAuxiliarr(id: string){
     return this.http.get(`${this.API_AUX}/auxiliares/${id}`);
   }
 

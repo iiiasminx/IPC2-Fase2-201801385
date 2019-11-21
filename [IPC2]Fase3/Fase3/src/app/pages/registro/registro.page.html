@@ -10,4 +10,36 @@
 
 <ion-content>
 
+    <br><br>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="estudiante.stud_nombre" id="inputDefault"></ion-input>
+    </ion-item>
+    <br><br>
+    <ion-item>
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input [(ngModel)]="estudiante.stud_apellido"></ion-input>
+    </ion-item>
+    <br><br>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="estudiante.stud_email"></ion-input>
+    </ion-item>
+    <br><br>
+    <ion-item>
+        <ion-label position="stacked">Usuario</ion-label>
+        <ion-input type="email" [(ngModel)]="estudiante.id_estudiante"></ion-input>
+      </ion-item>
+      <br><br>
+      <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="estudiante.contrasena"></ion-input>
+        </ion-item>
+        <br><br>
+    <ion-label #lblName id="lblName"></ion-label>
+    <br>
+    <ion-button (click)="probando()">
+      Registrarme
+    </ion-button>
+
 </ion-content>

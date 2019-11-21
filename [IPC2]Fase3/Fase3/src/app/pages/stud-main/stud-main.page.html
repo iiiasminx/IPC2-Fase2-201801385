@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <ion-toolbar>
+    <ion-title>Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div></div>
+      </ion-col>
+      <ion-col>
+        <div></div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="probando()">
+            Salir
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br>
+  <br>
+  <ion-text class="text-secondary">
+    <p>Por favor escoje a donde deseas ir</p>
+  </ion-text>
+
+  <br><br>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <a routerLink="/stud-asignar-cursos" color="tertiary" >Asignación</a>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <a routerLink="/stud-cursos-asignados" color="tertiary" >Mis Cursos</a>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <a routerLink="/registro" color="tertiary" >Tickets</a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <a routerLink="/registro" color="tertiary">Actividades</a>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <a routerLink="/registro" color="tertiary" >Notas</a>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <a routerLink="/registro" color="tertiary" >Asistencia</a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <a routerLink="/registro" color="tertiary" >Mensajes</a>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <a routerLink="/registro" color="tertiary" >Exámenes</a>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
