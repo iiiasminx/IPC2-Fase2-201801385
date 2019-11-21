@@ -1,9 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>stud-lista-tickets</ion-title>
-  </ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-toolbar>
+        <ion-title>Tickets</ion-title>
+      </ion-toolbar>
 </ion-header>
-
 <ion-content>
+    <div *ngFor="let ticket of tickets">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>              
+              Asunto: {{ticket.tick_asunto}}
+            </ion-card-title>
+          </ion-card-header>
+    
+          <ion-card-content>
+            Id ticket: &nbsp; {{ticket.id_ticket}} <br>
+            Nombre seccion: &nbsp; {{ticket.sec_nombre}}<br>
+            Nombre curso: &nbsp; {{ticket.cur_nombre}} <br>
+            Contenido: &nbsp; {{ticket.tick_contenido}} <br>
+            Estado: &nbsp; {{ticket.tick_estado}} <br>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
 
 </ion-content>

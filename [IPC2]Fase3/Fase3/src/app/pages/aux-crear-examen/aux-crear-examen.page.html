@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot = "start">
+            <ion-back-button defaultHref="/aux-main"></ion-back-button>
+        </ion-buttons>
+    
+        <ion-title>Crear Examen</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br><br>
+    <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input [(ngModel)]="examen.ex_nombre" id="inputDefault"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">¿Habilitado?</ion-label>
+          <ion-input [(ngModel)]="examen.ex_habilitado" id="inputDefault" value="Disabled" disabled></ion-input>
+        </ion-item>
+    <br><br>
+    <ion-label #lblName id="lblName"></ion-label>
+    <br>
+    <ion-button (click)="probando()">
+      Crear Examen
+    </ion-button>
+</ion-content>

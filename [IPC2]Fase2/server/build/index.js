@@ -13,6 +13,8 @@ const cursoRoutes_1 = __importDefault(require("./routes/cursoRoutes"));
 const secRoutes_1 = __importDefault(require("./routes/secRoutes"));
 const asignacionRoutes_1 = __importDefault(require("./routes/asignacionRoutes"));
 const ticketRoutes_1 = __importDefault(require("./routes/ticketRoutes"));
+const examenRoutes_1 = __importDefault(require("./routes/examenRoutes"));
+const asignacionAuxRoutes_1 = __importDefault(require("./routes/asignacionAuxRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -33,7 +35,9 @@ class Server {
         this.app.use('/api/cursos', cursoRoutes_1.default);
         this.app.use('/api/secciones', secRoutes_1.default);
         this.app.use('/api/asignaciones', asignacionRoutes_1.default);
+        this.app.use('/api/asignacionesaux', asignacionAuxRoutes_1.default);
         this.app.use('/api/tickets', ticketRoutes_1.default);
+        this.app.use('/api/examenes', examenRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

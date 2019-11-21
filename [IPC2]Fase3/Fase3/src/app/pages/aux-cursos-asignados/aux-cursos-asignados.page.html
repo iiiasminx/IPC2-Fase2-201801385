@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-toolbar>
+        <ion-title>Mis Cursos</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngFor="let seccion of missecciones">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <button class="btn btn-danger" (click)="crearExamen(seccion.id_seccion)">
+                  <i class="far fa-sticky-note"></i>
+              </button>
+              <br><br>
+              ID Asignación: {{seccion.id_asignacion}}
+            </ion-card-title>
+          </ion-card-header>
+    
+          <ion-card-content>
+            Id seccion: &nbsp; {{seccion.id_seccion}} <br>
+            Nombre seccion: &nbsp; {{seccion.sec_nombre}} <br>
+            Horario: &nbsp; {{seccion.sec_horario}}
+          </ion-card-content>
+        </ion-card>
+      </div>
+</ion-content>

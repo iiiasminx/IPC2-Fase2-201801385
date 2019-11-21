@@ -44,6 +44,14 @@ const routes: Routes = [
   {
     path: 'stud-lista-tickets',
     loadChildren: () => import('./pages/stud-lista-tickets/stud-lista-tickets.module').then( m => m.StudListaTicketsPageModule)
+  },
+  {
+    path: 'aux-crear-examen',
+    loadChildren: () => import('./pages/aux-crear-examen/aux-crear-examen.module').then( m => m.AuxCrearExamenPageModule)
+  },
+  {
+    path: 'aux-cursos-asignados',
+    loadChildren: () => import('./pages/aux-cursos-asignados/aux-cursos-asignados.module').then( m => m.AuxCursosAsignadosPageModule)
   }
 ];
 

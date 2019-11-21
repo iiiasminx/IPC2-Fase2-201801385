@@ -9,6 +9,8 @@ import cursoRoutes from './routes/cursoRoutes';
 import secRoutes from './routes/secRoutes';
 import asignacionRoutes from './routes/asignacionRoutes';
 import ticketRoutes from './routes/ticketRoutes';
+import examenRoutes from './routes/examenRoutes';
+import asignacionAuxRoutes from './routes/asignacionAuxRoutes';
 
 class Server {
 
@@ -36,7 +38,9 @@ this.app.use('/api/estudiantes', estudianteRoutes);
 this.app.use('/api/cursos', cursoRoutes);
 this.app.use('/api/secciones', secRoutes);
 this.app.use('/api/asignaciones', asignacionRoutes);
+this.app.use('/api/asignacionesaux', asignacionAuxRoutes);
 this.app.use('/api/tickets', ticketRoutes);
+this.app.use('/api/examenes', examenRoutes);
 }
 
 start():void{
