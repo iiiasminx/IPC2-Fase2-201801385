@@ -31,7 +31,7 @@ export class TicketFormComponent implements OnInit {
 
   probando(){
     console.log(this.ticket);
-    this.ticketService.guardarSeccion(this.ticket)
+    this.ticketService.guardarTicket(this.ticket)
     .subscribe(
       res => {
         console.log(res);
